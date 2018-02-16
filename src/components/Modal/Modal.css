@@ -10,12 +10,22 @@
   top: 30%;
   left: 25%;
   width: 50%;
+  /*all: transition all properties eg. opacity & transform, 0.3s: over 300ms, ease-out: using ease-out transformation*/
+  transition: all 0.5s ease-out;
 }
 
 .ModalOpen {
-  display: block;
+  /* Have to remove display property for animations to work */
+  /* display: block; */
+  opacity: 1;
+  /*Put the modal in the default position. IOW middle of the screen.*/
+  transform: translateY(0);
 }
 
 .ModalClosed {
-  display: none;
+  /* Have to remove display property for animations to work */
+  /* display: none; */
+  opacity: 0;
+  /*Move the modal off the screen.*/
+  transform: translateY(-100%);
 }
