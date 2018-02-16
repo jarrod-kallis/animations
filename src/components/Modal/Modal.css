@@ -10,22 +10,57 @@
   top: 30%;
   left: 25%;
   width: 50%;
-  /*all: transition all properties eg. opacity & transform, 0.3s: over 300ms, ease-out: using ease-out transformation*/
-  transition: all 0.5s ease-out;
+  /* all: transition all properties eg. opacity & transform, 0.3s: over 300ms,
+     ease-out: using ease-out transformation */
+  /* transition: all 0.5s ease-out; */
 }
 
 .ModalOpen {
   /* Have to remove display property for animations to work */
   /* display: block; */
-  opacity: 1;
-  /*Put the modal in the default position. IOW middle of the screen.*/
-  transform: translateY(0);
+  /* opacity: 1; */
+  /* Put the modal in the default position. IOW middle of the screen. */
+  /* transform: translateY(0); */
+  /* openModal: play this keyframe, 5s: duration, ease-out: transformation,
+    forwards: only play the animation forwards once */
+  animation: openModal 0.5s ease-out forwards;
 }
 
 .ModalClosed {
   /* Have to remove display property for animations to work */
   /* display: none; */
-  opacity: 0;
+  /* opacity: 0; */
   /*Move the modal off the screen.*/
-  transform: translateY(-100%);
+  /* transform: translateY(-100%); */
+  animation: closeModal 0.5s ease-out forwards;
+}
+
+@keyframes openModal {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(90%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes closeModal {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  50% {
+    opacity: 0.8;
+    transform: translateY(60%);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
 }
