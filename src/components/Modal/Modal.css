@@ -32,7 +32,7 @@
   /* opacity: 0; */
   /*Move the modal off the screen.*/
   /* transform: translateY(-100%); */
-  animation: closeModal 0.5s ease-out forwards;
+  animation: closeModal 1s ease-out forwards;
 }
 
 @keyframes openModal {
