@@ -5,9 +5,9 @@ import './Modal.css';
 
 const modal = props => {
   return (
-    <Transition mountOnEnter unmountOnExit in={props.show} timeout={300}>
+    <Transition mountOnEnter unmountOnExit in={props.show} timeout={500}>
       {/* Method executed using the children property of Transition which gets state of the transition.
-              eg. entering, entered, exiting, exited */
+          eg. entering, entered, exiting, exited */
       state => {
         const cssClasses = [
           'Modal',
