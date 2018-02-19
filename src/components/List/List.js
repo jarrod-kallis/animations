@@ -6,30 +6,36 @@ import './List.css';
 
 class List extends Component {
   state = {
-    items: [1, 2, 3]
+    items: [{ id: 1, value: 1 }, { id: 2, value: 2 }, { id: 3, value: 3 }]
   };
 
   addItemHandler = () => {
     this.setState(prevState => {
       return {
-        items: prevState.items.concat(prevState.items.length + 1)
+        items: prevState.items.concat({
+          id: Math.random(),
+          value: prevState.items.length + 1
+        })
       };
     });
   };
 
-  removeItemHandler = selIndex => {
+  removeItemHandler = id => {
     this.setState(prevState => {
       return {
-        items: prevState.items.filter((item, index) => index !== selIndex)
+        items: prevState.items.filter(item => item.id !== id)
       };
     });
   };
 
   render() {
-    const listItems = this.state.items.map((item, index) => (
-      <CSSTransition key={index} classNames="ListItem-Fade" timeout={500}>
-        <li className="ListItem" onClick={() => this.removeItemHandler(index)}>
-          {item}
+    const listItems = this.state.items.map(item => (
+      <CSSTransition key={item.id} classNames="ListItem-Fade" timeout={500}>
+        <li
+          className="ListItem"
+          onClick={() => this.removeItemHandler(item.id)}
+        >
+          {item.value}
         </li>
       </CSSTransition>
     ));
