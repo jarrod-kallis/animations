@@ -64,3 +64,20 @@
     transform: translateY(-100%);
   }
 }
+
+/* CSS Transition Modal */
+.Modal-Fade-Slide-enter {
+  /* Use to initialise the component */
+}
+
+.Modal-Fade-Slide-enter-active {
+  animation: openModal 0.5s ease-out forwards;
+}
+
+.Modal-Fade-Slide-exit {
+  /* Use to initialise the component */
+}
+
+.Modal-Fade-Slide-exit-active {
+  animation: closeModal 1s ease-out forwards;
+}
